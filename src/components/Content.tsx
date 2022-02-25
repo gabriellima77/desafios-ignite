@@ -5,7 +5,6 @@ import { MovieCard } from './MovieCard';
 interface ContentProps {
   selectedGenre: {
     title: string;
-    id: number;
   };
 
   selectedGenreId: number;
