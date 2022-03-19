@@ -1,1 +1,18 @@
 // TODO
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+
+  .content {
+    margin: 0 auto;
+    max-width: 720px;
+    padding: 5rem 0 3rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 2rem;
+
+    .logo {
+      text-decoration: none;
+    }
+  }
+}
