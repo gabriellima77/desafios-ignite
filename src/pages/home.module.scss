@@ -1,1 +1,35 @@
 // TODO
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+
+  a {
+    text-decoration: none;
+    display: block;
+  }
+
+  a + a {
+    margin-top: 2rem;
+  }
+
+  .content {
+    max-width: 720px;
+    margin: 0 auto;
+
+    .subtitle {
+      color: var(--body);
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .loadMore {
+    border: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--highlight);
+    margin-top: 4rem;
+  }
+}
