@@ -115,6 +115,7 @@ export default function Post({ post }: PostProps): JSX.Element {
         </section>
         <section
           className={styles.postContent}
+          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: getPostHTML() }}
         />
       </main>
