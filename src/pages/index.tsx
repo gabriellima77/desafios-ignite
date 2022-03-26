@@ -1,15 +1,8 @@
-import {
-  Box,
-  Flex,
-  Heading,
-  HStack,
-  Image,
-  SimpleGrid,
-  Text,
-} from '@chakra-ui/react';
+import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { Header } from '../components/Header';
+import { Slider } from '../components/Slider';
 import { TravelType } from '../components/TravelType';
 
 const Home: NextPage = () => {
@@ -24,7 +17,7 @@ const Home: NextPage = () => {
           <Box
             color="gray.50"
             py="16"
-            px={['18', '24','36']}
+            px={['18', '24', '36']}
             w={['100%', '100%', '100%', '100%', '58%']}
           >
             <Heading fontSize={['18', '24', '36']}>
@@ -43,7 +36,13 @@ const Home: NextPage = () => {
             alt="Avião"
           />
         </Flex>
-        <Flex wrap="wrap" as="section" align="center" justify="center" p="24">
+        <Flex
+          wrap="wrap"
+          as="section"
+          align="center"
+          justify="center"
+          p={['18', '24']}
+        >
           <TravelType
             text="vida noturna"
             imagePath="assets/icons/cocktail.svg"
@@ -54,6 +53,16 @@ const Home: NextPage = () => {
           <TravelType text="e mais..." imagePath="assets/icons/earth.svg" />
         </Flex>
         <Box m="0 auto" w={90} h={1} bg="gray.500" />
+        <Flex direction="column" align="center">
+          <Heading fontSize={[20, 20, 28, 32, 48]} textAlign="center" my="10">
+            Vamos nessa?
+            <br />
+            Então escolha seu continente
+          </Heading>
+          <Box px={[0, 0, 24]} w="100%">
+            <Slider />
+          </Box>
+        </Flex>
       </Box>
     </>
   );
