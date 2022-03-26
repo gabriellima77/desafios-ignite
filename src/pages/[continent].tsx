@@ -1,4 +1,5 @@
 import { Box, Flex, Heading, Image, Text, Tooltip } from '@chakra-ui/react';
+import axios from 'axios';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { City } from '../components/City';
@@ -130,16 +131,13 @@ export default function Continent({ continent }: ContinentProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = [
-    'europa',
-    'america_do_norte',
-    'america_do_sul',
-    'oceania',
-    'asia',
-    'africa',
-  ];
+  const { data } = await axios.get('http://localhost:3000/continents');
+  const paths = data.map((continent: any) => ({
+    params: { continent: continent.name },
+  }));
+
   return {
-    paths: paths.map((path) => ({ params: { continent: path } })),
+    paths,
     fallback: false,
   };
 };

@@ -1,0 +1,251 @@
+{
+  "continents": [
+    {
+      "id": 1,
+      "name": "europa",
+      "text": "O continente mais antigo.",
+      "cities": [
+        {
+          "id": 1,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 2,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 3,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 4,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 5,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        }
+      ]
+    },
+    {
+      "name": "america_do_norte",
+      "text": "Paisagens Lindas.",
+      "cities": [
+        {
+          "id": 1,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 2,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 3,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 4,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 5,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        }
+      ]
+    },
+    {
+      "name": "america_do_sul",
+      "text": "Um ambiente tropical.",
+      "cities": [
+        {
+          "id": 1,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 2,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 3,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 4,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 5,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        }
+      ]
+    },
+    {
+      "name": "africa",
+      "text": "O berço da Humanidade.",
+      "cities": [
+        {
+          "id": 1,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 2,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 3,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 4,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 5,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        }
+      ]
+    },
+    {
+      "name": "asia",
+      "text": "Um ambiente a explorar.",
+      "cities": [
+        {
+          "id": 1,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 2,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 3,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 4,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 5,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        }
+      ]
+    },
+    {
+      "name": "oceania",
+      "text": "Um novo mundo.",
+      "cities": [
+        {
+          "id": 1,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 2,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 3,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 4,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        },
+        {
+          "id": 5,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "flag": "assets/flag.png",
+          "img": "assets/londres.png"
+        }
+      ]
+    }
+  ]
+}

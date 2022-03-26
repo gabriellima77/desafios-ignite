@@ -1,11 +1,35 @@
 import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react';
-import type { NextPage } from 'next';
+import axios from 'axios';
+import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import { Header } from '../components/Header';
 import { Slider } from '../components/Slider';
 import { TravelType } from '../components/TravelType';
 
-const Home: NextPage = () => {
+interface HomeProps {
+  continents: {
+    id: number;
+    name: string;
+    text: string;
+    cities: {
+      id: number;
+      name: string;
+      country: string;
+      flag: string;
+      img: string;
+    }[];
+  }[];
+}
+
+const Home: NextPage<HomeProps> = ({ continents }) => {
+  const getSlideContent = () =>
+    continents.map((continent) => {
+      let { name } = continent;
+      if (name.includes('america')) name = name.replaceAll('_', ' ');
+      name = name[0].toUpperCase() + name.substring(1);
+      return { continent: name, text: continent.text };
+    });
+
   return (
     <>
       <Head>
@@ -60,12 +84,21 @@ const Home: NextPage = () => {
             Então escolha seu continente
           </Heading>
           <Box px={[0, 0, 24]} w="100%">
-            <Slider />
+            <Slider continents={getSlideContent()} />
           </Box>
         </Flex>
       </Box>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const data = await axios.get('http://localhost:3000/continents');
+  return {
+    props: {
+      continents: data.data,
+    },
+  };
 };
 
 export default Home;

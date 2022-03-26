@@ -7,16 +7,14 @@ import 'swiper/css/pagination';
 import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 
-const continents = [
-  { continent: 'Europa', text: 'O continente mais antigo.' },
-  { continent: 'America do Norte', text: 'Paisagens Lindas.' },
-  { continent: 'America do Sul', text: 'Um ambiente Tropical.' },
-  { continent: 'Africa', text: 'O berço da humanidade.' },
-  { continent: 'Asia', text: 'Um oriente há explorar.' },
-  { continent: 'Oceania', text: 'Um novo mundo.' },
-];
+interface SliderProps {
+  continents: {
+    continent: string;
+    text: string;
+  }[];
+}
 
-export function Slider() {
+export function Slider({ continents }: SliderProps) {
   const getContinentPath = (continent: string) => {
     const path = continent.includes('America')
       ? continent.replaceAll(' ', '_')
