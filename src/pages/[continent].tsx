@@ -7,42 +7,16 @@ import { Header } from '../components/Header';
 
 interface ContinentProps {
   continent: string;
+  cities: {
+    id: number;
+    name: string;
+    country: string;
+    flag: string;
+    img: string;
+  }[];
 }
 
-const cities = [
-  {
-    name: 'Londres',
-    country: 'Reino Unido',
-    flag: 'assets/flag.png',
-    img: 'assets/londres.png',
-  },
-  {
-    name: 'Londres',
-    country: 'Reino Unido',
-    flag: 'assets/flag.png',
-    img: 'assets/londres.png',
-  },
-  {
-    name: 'Londres',
-    country: 'Reino Unido',
-    flag: 'assets/flag.png',
-    img: 'assets/londres.png',
-  },
-  {
-    name: 'Londres',
-    country: 'Reino Unido',
-    flag: 'assets/flag.png',
-    img: 'assets/londres.png',
-  },
-  {
-    name: 'Londres',
-    country: 'Reino Unido',
-    flag: 'assets/flag.png',
-    img: 'assets/londres.png',
-  },
-];
-
-export default function Continent({ continent }: ContinentProps) {
+export default function Continent({ continent, cities }: ContinentProps) {
   return (
     <>
       <Head>
@@ -109,14 +83,14 @@ export default function Continent({ continent }: ContinentProps) {
             </Box>
           </Flex>
         </Flex>
-        <Box as="section" px="24">
+        <Box as="section" px="24" pb="8">
           <Heading fontSize={[24, 24, 24, 36]} fontWeight={500}>
             Cidades +100
           </Heading>
           <Flex mt="8" wrap="wrap" gap="14">
-            {cities.map(({ name, country, img, flag }, i) => (
+            {cities.map(({ id, name, country, img, flag }) => (
               <City
-                key={name + i}
+                key={id}
                 name={name}
                 country={country}
                 img={img}
@@ -143,12 +117,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
+  const { data } = await axios.get('http://localhost:3000/continents');
   let continent = String(context.params?.continent);
+
+  const { cities } = data.find((cont: any) => cont.name === continent);
   continent = continent.replaceAll('_', ' ');
   continent = continent[0].toUpperCase() + continent.substring(1);
+
   return {
     props: {
       continent,
+      cities,
     },
   };
 };
