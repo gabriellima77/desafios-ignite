@@ -1,38 +1,27 @@
-import { Flex, Image, Link as ChakraLink } from '@chakra-ui/react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { Box, Flex, Button, useDisclosure, Image } from '@chakra-ui/react';
 
-export function Header() {
-  const router = useRouter();
+import { ModalAddImage } from './Modal/AddImage';
 
-  const isHomePage = router.asPath === '/';
+export function Header(): JSX.Element {
+  const { onOpen, isOpen, onClose } = useDisclosure();
 
   return (
-    <Flex
-      align="center"
-      justify="center"
-      w="100%"
-      py="6"
-      px={['18', '20', '20', '24', '48']}
-    >
-      {!isHomePage ? (
-        <Link href="/" passHref>
-          <ChakraLink mr="auto" as="a">
-            <Image src="assets/icons/back.svg" alt="Botão de voltar" />
-          </ChakraLink>
-        </Link>
-      ) : null}
-      <Flex justify="center" flex="1">
-        <Link href="/" passHref>
-          <ChakraLink as="a">
-            <Image
-              h={['20px', '28px', '28px', 'auto']}
-              src="assets/Logo.png"
-              alt="Logo"
-            />
-          </ChakraLink>
-        </Link>
-      </Flex>
-    </Flex>
+    <>
+      <Box bgColor="pGray.800">
+        <Flex
+          justifyContent="space-between"
+          alignItems="center"
+          maxW={1120}
+          mx="auto"
+          px={20}
+          py={6}
+        >
+          <Image src="logo.svg" h={10} />
+          <Button onClick={() => onOpen()}>Adicionar imagem</Button>
+        </Flex>
+      </Box>
+
+      <ModalAddImage isOpen={isOpen} onClose={onClose} />
+    </>
   );
 }

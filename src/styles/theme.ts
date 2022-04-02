@@ -2,30 +2,41 @@ import { extendTheme } from '@chakra-ui/react';
 
 export const theme = extendTheme({
   colors: {
-    black: '#000000',
-    white: '#FFFFFF',
-    yellow: {
-      500: '#FFBA08',
-    },
-    gray: {
-      50: '#F5F8FA',
-      200: '#DADADA',
-      300: '#999999',
-      500: '#47585B',
+    pGray: {
+      '50': '#F3F2F2',
+      '100': '#DDDCDA',
+      '200': '#C7C5C2',
+      '300': '#B1AFAA',
+      '400': '#9B9892',
+      '500': '#85817A',
+      '600': '#6A6762',
+      '700': '#504E49',
+      '800': '#353431',
+      '900': '#1B1A18',
     },
   },
   fonts: {
-    body: "'Poppins', sans-serif",
-    heading: "'Poppins', sans-serif",
+    heading: 'Roboto',
+    body: 'Roboto',
+  },
+  components: {
+    Text: {
+      baseStyle: {
+        fontSize: 'lg',
+        fontWeight: 'normal',
+      },
+    },
+    Button: {
+      defaultProps: {
+        colorScheme: 'orange',
+      },
+    },
   },
   styles: {
     global: {
       body: {
-        bg: 'gray.50',
-        color: 'gray.500',
-      },
-      span: {
-        fontFamily: "'Barlow', sans-serif",
+        bg: 'pGray.900',
+        color: 'pGray.50',
       },
     },
   },
