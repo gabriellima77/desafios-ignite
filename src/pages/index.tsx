@@ -39,6 +39,7 @@ export default function Home(): JSX.Element {
     const imageData = data?.pages.map(page => {
       return page.data;
     });
+    console.log(imageData);
     return imageData?.flat();
   }, [data]);
 
@@ -51,7 +52,7 @@ export default function Home(): JSX.Element {
       <Header />
 
       <Box maxW={1120} px={20} mx="auto" my={20}>
-        <CardList cards={[]} />
+        <CardList cards={formattedData} />
         {/* TODO RENDER LOAD MORE BUTTON IF DATA HAS NEXT PAGE */}
         {hasNextPage && (
           <Button onClick={() => fetchNextPage()}>
