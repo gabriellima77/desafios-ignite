@@ -28,7 +28,7 @@ export function FormAddImage({ closeModal }: FormAddImageProps): JSX.Element {
         acceptedFormats: (value: FileList) => {
           const regex = /png|gif|jpeg/g;
           return (
-            value[0].type.match(regex).length > 0 ||
+            value[0].type.match(regex)?.length > 0 ||
             'Somente são aceitos arquivos PNG, JPEG e GIF'
           );
         },
