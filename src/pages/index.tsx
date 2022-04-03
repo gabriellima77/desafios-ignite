@@ -20,20 +20,20 @@ export default function Home(): JSX.Element {
     'images',
     // TODO AXIOS REQUEST WITH PARAM
     async (pageParam = null) => {
-      const { pageParam: param } = pageParam;
-      const { data } = await api.get('api/images', {
-        params: {
-          after: param,
-        },
-      });
-      return data;
+      if (pageParam) {
+        const response = await api.get('/api/images', {
+          params: {
+            after: pageParam.pageParam,
+          },
+        });
+        return response.data;
+      }
+      const response = await api.get('/api/images');
+      return response.data;
     },
     // TODO GET AND RETURN NEXT PAGE PARAM
     {
-      getNextPageParam: lastPages => {
-        const { after } = lastPages;
-        return after ? after : null;
-      },
+      getNextPageParam: lastPages => lastPages.after || null,
     }
   );
   const formattedData = useMemo(() => {
