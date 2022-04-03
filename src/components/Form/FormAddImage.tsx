@@ -78,7 +78,7 @@ export function FormAddImage({ closeModal }: FormAddImageProps): JSX.Element {
     useForm();
   const { errors } = formState;
 
-  const onSubmit = async (data: Record<string, unknown>): Promise<void> => {
+  const onSubmit = (data: Record<string, unknown>): Promise<void> => {
     try {
       // TODO SHOW ERROR TOAST IF IMAGE URL DOES NOT EXISTS
       // TODO EXECUTE ASYNC MUTATION
@@ -89,15 +89,15 @@ export function FormAddImage({ closeModal }: FormAddImageProps): JSX.Element {
           description:
             'É preciso adicionar e aguardar o upload de uma imagem antes de realizar o cadastro.',
         });
-        return Promise.reject();
+        return null;
       }
 
-      await mutation.mutateAsync(data);
+      mutation.mutateAsync(data);
       toast({
         title: 'Imagem cadastrada',
         description: 'Sua imagem foi cadastrada com sucesso.',
       });
-      return Promise.resolve();
+      return null;
     } catch {
       // TODO SHOW ERROR TOAST IF SUBMIT FAILED
       toast({
